@@ -2,24 +2,38 @@ import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.Container;
 
-public class PhysicsLab {
+public class PhysicsLab extends JApplet {
+
+   private MyWorld world;
+   public MyWorld getWorld() {return world;}
+
+   public PhysicsLab() {
+      world = new MyWorld();
+   }
+
+   public void init() {
+      MyWorldView  worldView = new MyWorldView(world);
+      world.setView(worldView);
+      getContentPane().add(worldView);
+   }
+
    public static void main(String[] args) {
-      PhysicsLab_GUI lab_gui = new PhysicsLab_GUI();
+      PhysicsLab yo = new PhysicsLab();
+      PhysicsLab_GUI lab_gui = new PhysicsLab_GUI(yo.getWorld());
       lab_gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       lab_gui.setVisible(true);
    }
 }
 
 class PhysicsLab_GUI extends JFrame {
-   public PhysicsLab_GUI() {
+   public PhysicsLab_GUI(MyWorld world) {
       setTitle("My Small and Nice Physics Laboratory");
       setSize(MyWorldView.WIDTH+100, MyWorldView.HEIGHT+150);  // height+50 to account for menu height
-      MyWorld world = new MyWorld();
       LabMenuListener menuListener = new LabMenuListener(world);
       setJMenuBar(createLabMenuBar(menuListener));
       MyWorldView  worldView = new MyWorldView(world);
       world.setView(worldView);
-      add(worldView);  
+      getContentPane().add(worldView);
    }
 
    public JMenuBar createLabMenuBar(LabMenuListener menu_l) {
