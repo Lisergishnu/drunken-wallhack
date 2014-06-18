@@ -6,7 +6,7 @@ jar:
 	$(JC) $(SRC)
 	mkdir -p bin/
 	mv src/*.class bin/
-	jar cfe $(NAME).jar $(NAME) -C bin/ .
+	jar cfe $(NAME).jar $(NAME) -C bin/ . -C assets/ .
 clean:
 	rm -rf bin/
 	rm $(NAME).jar

@@ -1,3 +1,4 @@
+import javax.sound.sampled.Clip;
 import javax.swing.JPanel;
 
 import java.awt.Graphics;
@@ -18,6 +19,8 @@ public class MyWorldView extends JPanel {
    public static Line2D.Double X_AXIS;  // lines to draw my world axes (singular axis, plural axes).
    public static Line2D.Double Y_AXIS;
    private static double AXES_SCALE = 200.0;  // 1 [m] equals 100 [pixels]
+   
+   private Clip mCollisionClip = null;
    
    static {
        SPACE_TRANSFORM = AffineTransform.getTranslateInstance(X_ORIGEN, Y_ORIGEN);
@@ -87,5 +90,15 @@ public class MyWorldView extends JPanel {
       removeMouseMotionListener(mListener);
       removeMouseListener(mListener);
    }
+
+public void setCollisionClip(Clip clipCollision) {
+	mCollisionClip = clipCollision;
+}
+
+public void playCollisionClip() {
+	if (mCollisionClip != null) {
+		mCollisionClip.start();
+	}
+}
 
 }

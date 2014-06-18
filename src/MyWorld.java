@@ -1,6 +1,9 @@
 import java.util.*;
 import java.io.*;
+
+import javax.sound.sampled.Clip;
 import javax.swing.Timer;
+
 import java.awt.event.*;
 
 /**
@@ -137,7 +140,10 @@ public class MyWorld implements ActionListener {
       for (PhysicsElement e: elements)
          if ( e instanceof Simulateable) {
             Simulateable b = (Simulateable) e;
-            if ((b!=me) && b.collide(me)) return b;
+            if ((b!=me) && b.collide(me)) {
+            	view.playCollisionClip();
+            	return b;
+            }
          }
       return null;
    }
@@ -179,6 +185,14 @@ public class MyWorld implements ActionListener {
 	    	  }
 	      }
 	      return null;
+   }
+   
+   /**
+    * Permite registrar el clip de sonido que se usara en la colision hacia MyWorldView.
+    * @param clipCollision Clip de sonido ya inicializado. 
+    **/ 
+   public void setCollisionClip(Clip clipCollision) {
+	   view.setCollisionClip(clipCollision);
    }  
    
 } 
