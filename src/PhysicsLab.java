@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.Container;
 
+//OBS: Esta clase hace la funcion de la clase PhysicsLab Y PhysicsLabApplet, segun la tarea
 public class PhysicsLab extends JApplet {
 
    private MyWorld world;
