@@ -1,6 +1,10 @@
 import javax.swing.JFrame;
+import javax.sound.sampled.*;
 import javax.swing.*;
+
 import java.awt.Container;
+import java.io.IOException;
+import java.net.URL;
 
 //OBS: Esta clase hace la funcion de la clase PhysicsLab Y PhysicsLabApplet, segun la tarea
 public class PhysicsLab extends JApplet {
@@ -16,6 +20,24 @@ public class PhysicsLab extends JApplet {
       MyWorldView  worldView = new MyWorldView(world);
       world.setView(worldView);
       getContentPane().add(worldView);
+      //Cargar sonido
+      URL url = this.getClass().getClassLoader().getResource("collision.wav");
+      try {
+		AudioInputStream audio = AudioSystem.getAudioInputStream(url);
+		Clip clipCollision = AudioSystem.getClip();
+		clipCollision.open(audio);
+		world.setCollisionClip(clipCollision);
+	} catch (UnsupportedAudioFileException e) {
+		System.out.println("Audio file Unsupported.");
+		e.printStackTrace();
+	} catch (IOException e) {
+		System.out.println("Can't open file.");
+		e.printStackTrace();
+	} catch (LineUnavailableException e) {
+		System.out.println("Cannot open audio clip line.");
+		e.printStackTrace();
+	}
+      
    }
 
    public static void main(String[] args) {
@@ -35,6 +57,23 @@ class PhysicsLab_GUI extends JFrame {
       MyWorldView  worldView = new MyWorldView(world);
       world.setView(worldView);
       getContentPane().add(worldView);
+      //Cargar sonido
+      URL url = this.getClass().getClassLoader().getResource("collision.wav");
+      try {
+		AudioInputStream audio = AudioSystem.getAudioInputStream(url);
+		Clip clipCollision = AudioSystem.getClip();
+		clipCollision.open(audio);
+		world.setCollisionClip(clipCollision);
+	} catch (UnsupportedAudioFileException e) {
+		System.out.println("Audio file Unsupported.");
+		e.printStackTrace();
+	} catch (IOException e) {
+		System.out.println("Can't open file.");
+		e.printStackTrace();
+	} catch (LineUnavailableException e) {
+		System.out.println("Cannot open audio clip line.");
+		e.printStackTrace();
+	}
    }
 
    public JMenuBar createLabMenuBar(LabMenuListener menu_l) {
