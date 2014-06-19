@@ -38,10 +38,12 @@ public class MyWorldView extends JPanel {
    private MyWorld world;
 
    private MouseListener mListener;
-   
+   private String mTitle;
+
    public MyWorldView(MyWorld w){
       world = w;
       mListener = new MouseListener(w);
+      mTitle = new String("Not initialized");
       addMouseMotionListener(mListener);
       addMouseListener(mListener);
       //Vemos si se gatilla un switching de elementos bajo el mouse
@@ -68,7 +70,7 @@ public class MyWorldView extends JPanel {
    public void paintComponent(Graphics g){
       Graphics2D g2 = (Graphics2D)g;
       super.paintComponent(g); // it paints the background
-      g2.drawString("ELO329 1er.Sem. 2014,   1 [m] = "+AXES_SCALE+" [pixels]", WIDTH/4, 30);
+      g2.drawString(mTitle, WIDTH/4, 30);
       g2.transform(SPACE_TRANSFORM);
       g2.setStroke(new BasicStroke(0.02f));
       g2.draw(X_AXIS);
@@ -99,6 +101,10 @@ public void playCollisionClip() {
 	if (mCollisionClip != null) {
 		mCollisionClip.start();
 	}
+}
+
+public void setTitle(String title) {
+	mTitle = title;
 }
 
 }

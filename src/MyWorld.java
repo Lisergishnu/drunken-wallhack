@@ -193,6 +193,10 @@ public class MyWorld implements ActionListener {
     **/ 
    public void setCollisionClip(Clip clipCollision) {
 	   view.setCollisionClip(clipCollision);
+   }
+
+   public void setTitle(String title) {
+	   view.setTitle(title);	
    }  
    
 } 
