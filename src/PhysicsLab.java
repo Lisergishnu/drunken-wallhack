@@ -59,6 +59,26 @@ public class PhysicsLab extends JApplet {
     							  Double.parseDouble(paramList[3])));
       }
       
+      //FixedHooks
+      int nHooks = Integer.parseInt(getParameter("fixedHookNum"));
+      for (int i = 0; i < nHooks; i++) {
+		//Obtener parametros
+    	String param = getParameter("fixedHook." + (i+1) );
+    	String[] paramList = param.split(";");
+    	world.addElement(new FixedHook(Double.parseDouble(paramList[0]),
+    							  Double.parseDouble(paramList[1])));
+      }
+      
+      //Osciladores
+      int nOsc = Integer.parseInt(getParameter("oscillatorNum"));
+      for (int i = 0; i < nOsc; i++) {
+		//Obtener parametros
+    	String param = getParameter("oscillator." + (i+1) );
+    	String[] paramList = param.split(";");
+    	world.addElement(new FixedHook(Double.parseDouble(paramList[0]),
+    							  Double.parseDouble(paramList[1])));
+      }
+      
    }
 
    public static void main(String[] args) {
