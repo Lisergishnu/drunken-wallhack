@@ -20,6 +20,7 @@ public class PhysicsLab extends JApplet {
       MyWorldView  worldView = new MyWorldView(world);
       world.setView(worldView);
       getContentPane().add(worldView);
+
       //Cargar sonido
       URL url = this.getClass().getClassLoader().getResource("collision.wav");
       try {
@@ -37,6 +38,26 @@ public class PhysicsLab extends JApplet {
 		System.out.println("Cannot open audio clip line.");
 		e.printStackTrace();
 	}
+      
+      //Cargar parametros desde HTML
+      world.setTitle(getParameter("title"));
+      world.setDelta_t(Double.parseDouble(getParameter("deltaTime")));
+      world.setRefreshPeriod(Double.parseDouble(getParameter("refreshTime")));
+      //TODO: Set max plotting time
+      //something something (Double.parseDouble(getParameter("maxPlotTime")))
+      
+      //Ver cuantos objetos hay descritos y agregarlos a MyWorld
+      //Bolas
+      int nBolas = Integer.parseInt(getParameter("ballNum"));
+      for (int i = 0; i < nBolas; i++) {
+		//Obtener parametros
+    	String param = getParameter("ball." + (i+1) );
+    	String[] paramList = param.split(";");
+    	world.addElement(new Ball(Double.parseDouble(paramList[0]),
+    							  Double.parseDouble(paramList[1]),
+    							  Double.parseDouble(paramList[2]),
+    							  Double.parseDouble(paramList[3])));
+      }
       
    }
 
