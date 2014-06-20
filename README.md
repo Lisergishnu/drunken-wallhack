@@ -11,15 +11,21 @@ Compilación y Ejecución
 ------------
 El programa se puede correr tanto como applet como aplicacion.
 Para preparar la ejecucion como applet hay que ejecutar el siguiente comando:
+
 	$ make jar
 
 Para correr el applet basta ejecutar el siguiente comando, que ejecutara el arhicvo PhysicsLab.html	
+
 	$ make runApplet
 
 Para ejecutar el programa aplicacion basta usar:	
+
 	$ make run
+	
 o bien este otro comando:	
+
 	$ java -jar PhysicsLab.jar
+	
 
 Comentarios
 ------------
