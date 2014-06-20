@@ -24,10 +24,11 @@ public class GraphView extends JInternalFrame implements ActionListener, ChartDa
     public GraphView() {
         // Init some starting data
         double[][] model = {{0.0},
-                            {0.25}};
+                            {0.25},
+                            {0.0}};
         
         double[] columns = {0.0, 30.0};
-        String[] rows = {"Kin. Energy", "Pot. Temp."};
+        String[] rows = {"Kinetic", "Potential", "Mechanical"};
 
         String title = "System Energy";
 

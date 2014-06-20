@@ -151,7 +151,7 @@ public class MyWorld implements ActionListener {
 		if(arrayStep != arrayStepAnterior) {
 			mPlotHandle.addDataPoint(0, kE, t);
 			mPlotHandle.addDataPoint(1, pE, t);
-			//mPlotHandle.addDataPoint(2, pE + kE, t);
+			mPlotHandle.addDataPoint(2, pE + kE, t);
 			arrayStepAnterior = arrayStep;
 		}
 		//Despues de haber simulado todo es necesario redibujar la vista
