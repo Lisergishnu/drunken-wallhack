@@ -4,6 +4,8 @@ import java.io.*;
 import javax.sound.sampled.Clip;
 import javax.swing.Timer;
 
+import de.progra.charting.render.PlotChartRenderer;
+
 import java.awt.Color;
 import java.awt.event.*;
 
@@ -22,20 +24,14 @@ public class MyWorld implements ActionListener {
 	private double t;        // simulation time
 	private double delta_t;        // in seconds
 	private double refreshPeriod;  // in seconds
-	final private double refreshPlotPeriod = .5; //tambien in seconds
+	final private double refreshPlotPeriod = .01; //tambien in seconds
 	private double gravity=10; // in m/s^2
 
 	//Arrays for graphics
-	private double[] mTimeArray;
-	private double[] mPotentialEnergyArray;
-	private double[] mKineticEnergyArray;
-	private double[] mMechanicalEnergyArray;
 	private int arrayStep;
-	private int mPotentialHandle;
-	private int mKineticHandle;
-	private int mMechanicHandle;
-
 	private int arrayStepAnterior;
+
+	private GraphView mPlotHandle;
 
 
 
@@ -60,12 +56,8 @@ public class MyWorld implements ActionListener {
 		view = null;
 		passingTime = new Timer((int)(refreshPeriod*1000), this); 
 
-		mTimeArray = new double[(int) ((int) 30/refreshPlotPeriod)];
-		mPotentialEnergyArray = new double[(int) ((int) 30/refreshPlotPeriod)];
-		mKineticEnergyArray= new double[(int) ((int) 30/refreshPlotPeriod)];
-		mMechanicalEnergyArray = new double[(int) ((int) 30/refreshPlotPeriod)];
-
 		arrayStep = 0;
+		arrayStepAnterior = -1;
 
 	}
 	/**
@@ -153,14 +145,15 @@ public class MyWorld implements ActionListener {
 		}
 		//Guardamos los valores
 		arrayStep = (int) ((int) t / refreshPlotPeriod);
-		
-		mKineticEnergyArray[arrayStep] = kE;
-		mPotentialEnergyArray[arrayStep] = pE;
-		mMechanicalEnergyArray[arrayStep] = pE + kE;
 
 		//Si se actualizaron los datos (cada refreshPlotTime segundos)
 		//debemos refrescar el grafico
-		
+		if(arrayStep != arrayStepAnterior) {
+			mPlotHandle.addDataPoint(0, kE, t);
+			mPlotHandle.addDataPoint(1, pE, t);
+			//mPlotHandle.addDataPoint(2, pE + kE, t);
+			arrayStepAnterior = arrayStep;
+		}
 		//Despues de haber simulado todo es necesario redibujar la vista
 		repaintView();
 	}
@@ -239,17 +232,9 @@ public class MyWorld implements ActionListener {
 		view.setTitle(title);	
 	}
 
-	public double[] getTimeArray() {
-		return mTimeArray;
-	}
-	public double[] getPotentialEnergy() {
-		return mPotentialEnergyArray;
-	}
-	public double[] getKineticEnergy() {
-		return mKineticEnergyArray;
-	}
-	public double[] getMechanicalEnergy() {
-		return mMechanicalEnergyArray;
+	public void setPlot(GraphView plot) {
+		mPlotHandle = plot;
+
 	}
 
 

@@ -62,6 +62,6 @@ public class PhysicsLabApplet extends JApplet {
 	}
 	
 	public void start() {
-		splitPane.setDividerLocation(0.75);
+		splitPane.setDividerLocation(0.65);
 	}
 }

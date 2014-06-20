@@ -23,7 +23,8 @@ public class PhysicsLab {
 		MyWorldView  worldView = new MyWorldView(world);
 		world.setView(worldView);
 		worldView.setTitle("Physics Lab 3");
-		GraphView plot = new GraphView(); 
+		GraphView plot = new GraphView();
+		world.setPlot(plot);
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, worldView, plot);
 		plot.setVisible(true);
 			//Cargar sonido
@@ -55,7 +56,7 @@ public class PhysicsLab {
 		lab_gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		lab_gui.add(splitPane);
 		lab_gui.setVisible(true);
-		splitPane.setDividerLocation(0.75);
+		splitPane.setDividerLocation(0.65);
 		
 	}
 
@@ -108,6 +109,6 @@ public class PhysicsLab {
 class PhysicsLab_GUI extends JFrame {
 	public PhysicsLab_GUI() {
 		setTitle("My Small and Nice Physics Laboratory");
-		setSize(MyWorldView.WIDTH+100, MyWorldView.HEIGHT+150);  // height+50 to account for menu height
+		setSize(MyWorldView.WIDTH+200, MyWorldView.HEIGHT+150);  // height+50 to account for menu height
 	}   
 }

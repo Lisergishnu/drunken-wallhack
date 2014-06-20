@@ -23,14 +23,13 @@ public class GraphView extends JInternalFrame implements ActionListener, ChartDa
     
     public GraphView() {
         // Init some starting data
-        double[][] model = {{25.0, 22.0, 23.0},
-                            {13.0, 11.0, 12.0}};
+        double[][] model = {{0.0},
+                            {0.25}};
         
-        double[] columns = {0.0, 1.0, 2.0};
-        String[] columnString = {"1998", "1999", "2000"};
-        String[] rows = {"Int. Temp.", "Ext. Temp."};
+        double[] columns = {0.0, 30.0};
+        String[] rows = {"Kin. Energy", "Pot. Temp."};
 
-        String title = "Viewing Internal & External Temperature";
+        String title = "System Energy";
 
         // Create an editable chart data model
         data = new EditableChartDataModel(model, columns, rows);
@@ -50,10 +49,11 @@ public class GraphView extends JInternalFrame implements ActionListener, ChartDa
 
     public void actionPerformed(ActionEvent evt) {
         // The Timer generated an event -> update DataModel with random data
-        data.insertValue(0, new Double(Math.random() * 10.0 + 20.0), new Double(time));
-        data.insertValue(1, new Double(Math.random() * 7.0 + 10.0), new Double(time));
-        
         time++;
+    }
+    
+    public void addDataPoint(int id, double Y, double X) {
+    	data.insertValue(id, Y, X);
     }
     
     public void chartDataChanged(ChartDataModelEvent evt) {
