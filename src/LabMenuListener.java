@@ -27,21 +27,20 @@ public class LabMenuListener implements ActionListener {
          world.addElement(b2);
          world.addElement(h1);
          world.addElement(s1);
-         //world.addElement(s2);
          world.addElement(bloque1);
          s1.attachAend(h1);
          s1.attachBend(b1);
-         //s2.attachAend(b2);
-         //s2.attachBend(bloque1);
       }
       if (text.equals("Ball")) 
     	  world.addElement(new Ball(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0));     
-      if (text.equals("Fixed Hook"))  // ; same as nothing
+      if (text.equals("Fixed Hook"))
     	  world.addElement(new FixedHook(0.1 + r.nextDouble() *3,0.1 + r.nextDouble() *0.3));  
       if (text.equals("Spring")) 
     	  world.addElement(new Spring(0.1 + r.nextDouble() *3,0.1 + r.nextDouble() *0.5));  
       if (text.equals("Block")) 
-    	  world.addElement(new Block(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0,world));  
+    	  world.addElement(new Block(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0,world));
+      if (text.equals("Oscilador")) 
+    	  world.addElement(new Oscilador(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0.1 + r.nextDouble()*3));
       
       // Actions associated to MyWorld submenu
       if (text.equals("Start"))

@@ -86,6 +86,7 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 	
 	public void setPosition(double x) {
 		this.pos = x;
+		posInicial = x;
 	}
 
 	public String getDescription(){
@@ -107,10 +108,9 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
         view.setReleased();
     }
     public void dragTo(double x){
-
+    	posInicial=x;
+    	pos=x;
     }
-
-
 	public double getWidth() {
 		return width;
 	}
