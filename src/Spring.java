@@ -116,7 +116,7 @@ public class Spring extends PhysicsElement {
         }
     }
 public double getPotentialEnergy() {
-	return 0.5 * stiffness * (Math.abs(bLoosePosition - aLoosePosition) - restLength) * (Math.abs(bLoosePosition - aLoosePosition) - restLength);
+	return 0.5 * stiffness * (Math.abs(getAendPosition() - getBendPosition()) - restLength) * (Math.abs(getAendPosition() - getBendPosition()) - restLength);
 }
 
 }
