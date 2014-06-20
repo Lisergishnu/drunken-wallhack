@@ -24,9 +24,13 @@ public class PhysicsLab {
 	public JSplitPane initialize() {
 		MyWorldView  worldView = new MyWorldView(world);
 		world.setView(worldView);
-		worldView.setTitle("Running as a standalone app");
+		worldView.setTitle("Physics Lab 3");
 		Plot2DPanel plot = new Plot2DPanel();
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, worldView, plot);
+		int pEHandle = plot.addLinePlot("Potential Energy", world.getTimeArray(), world.getPotentialEnergy());
+		int kEHandle = plot.addLinePlot("Kinetic Energy", world.getTimeArray(), world.getKineticEnergy());
+		int mEHandle = plot.addLinePlot("Mechanical Energy", world.getTimeArray(), world.getMechanicalEnergy());
+		world.setCurrentPlot(plot, pEHandle, kEHandle, mEHandle);
 		//Cargar sonido
 		URL url = this.getClass().getClassLoader().getResource("collision.wav");
 		try {

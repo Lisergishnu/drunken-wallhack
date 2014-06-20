@@ -11,10 +11,12 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 	private double posInicial,pos,nextPos;
 	private double width;
 	private double personalTime;
+	private double mass;
+	private double speed_t,nextSpeed_t;
 	
 	private Spring attachedSpring;
 	
-	public Oscilador(double _x, double width, double amplitud, double frecuencia) {
+	public Oscilador(double _x, double mass, double width, double amplitud, double frecuencia) {
 		super(id++);
 		this.pos = _x;
 		this.posInicial = _x;
@@ -22,6 +24,7 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 		this.amplitud = amplitud;
 		this.frecuencia = frecuencia;
 		this.attachedSpring = null;
+		this.mass = mass;
 		this.personalTime = 0;
 		view = new OsciladorView(this);
 	}
@@ -40,6 +43,7 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 	public void computeNextState(double delta_t, MyWorld w) {
 		personalTime += delta_t;
 		nextPos = posInicial + amplitud * Math.sin(2 * Math.PI * frecuencia * personalTime);
+		nextSpeed_t = amplitud * 2 * Math.PI * frecuencia * Math.cos(2 * Math.PI * frecuencia * personalTime);
 	}
 
 	
@@ -115,4 +119,7 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 		return width;
 	}
 	
+	public double getKineticEnergy() {
+		return 0.5 * mass * speed_t * speed_t;
+	}
 }

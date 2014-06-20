@@ -139,4 +139,8 @@ public class Block extends PhysicsElement implements SpringAttachable, Simulatea
 		return closeEnougth && approaching;
 	}
 
+	public double getKineticEnergy() {
+		//TODO: El bloque pierde energia por el roce...
+		return 0.5 * mass * speed_t * speed_t;
+	}
 }
