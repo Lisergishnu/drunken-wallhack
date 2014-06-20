@@ -44,18 +44,20 @@ public class PhysicsLab {
 			System.out.println("Cannot open audio clip line.");
 			e.printStackTrace();
 		}
-		
 		return splitPane;
 	}
 
 	public static void main(String[] args) {
 		PhysicsLab yo = new PhysicsLab();
 		PhysicsLab_GUI lab_gui = new PhysicsLab_GUI();
+		JSplitPane splitPane = yo.initialize();
 		LabMenuListener menuListener = new LabMenuListener(yo.getWorld());
 		lab_gui.setJMenuBar(yo.createLabMenuBar(menuListener));
 		lab_gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		lab_gui.add(yo.initialize());
+		lab_gui.add(splitPane);
 		lab_gui.setVisible(true);
+		splitPane.setDividerLocation(0.75);
+		
 	}
 
 	public JMenuBar createLabMenuBar(LabMenuListener menu_l) {
@@ -104,7 +106,7 @@ public class PhysicsLab {
 	} 
 }
 
-class PhysicsLab_GUI extends JInternalFrame {
+class PhysicsLab_GUI extends JFrame {
 	public PhysicsLab_GUI() {
 		setTitle("My Small and Nice Physics Laboratory");
 		setSize(MyWorldView.WIDTH+100, MyWorldView.HEIGHT+150);  // height+50 to account for menu height
