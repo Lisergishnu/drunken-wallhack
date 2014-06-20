@@ -4,8 +4,6 @@ import java.io.*;
 import javax.sound.sampled.Clip;
 import javax.swing.Timer;
 
-import org.math.plot.Plot2DPanel;
-
 import java.awt.Color;
 import java.awt.event.*;
 
@@ -33,7 +31,6 @@ public class MyWorld implements ActionListener {
 	private double[] mKineticEnergyArray;
 	private double[] mMechanicalEnergyArray;
 	private int arrayStep;
-	private Plot2DPanel mPlotHandle;
 	private int mPotentialHandle;
 	private int mKineticHandle;
 	private int mMechanicHandle;
@@ -163,12 +160,7 @@ public class MyWorld implements ActionListener {
 
 		//Si se actualizaron los datos (cada refreshPlotTime segundos)
 		//debemos refrescar el grafico
-		if (arrayStep != arrayStepAnterior) {
-			mPlotHandle.changePlotData(mKineticHandle, mTimeArray,mKineticEnergyArray);
-			mPlotHandle.changePlotData(mPotentialHandle, mTimeArray, mPotentialEnergyArray);
-			mPlotHandle.changePlotData(mMechanicHandle, mTimeArray,mMechanicalEnergyArray);
-			arrayStepAnterior = arrayStep;
-		}
+		
 		//Despues de haber simulado todo es necesario redibujar la vista
 		repaintView();
 	}
@@ -259,12 +251,6 @@ public class MyWorld implements ActionListener {
 	public double[] getMechanicalEnergy() {
 		return mMechanicalEnergyArray;
 	}
-	public void setCurrentPlot(Plot2DPanel plot, int pEHandle, int kEHandle,
-			int mEHandle) {
-		mPlotHandle = plot;
-		mPotentialHandle = pEHandle;
-		mKineticHandle = kEHandle;
-		mMechanicHandle = mEHandle;
-	}  
+
 
 } 

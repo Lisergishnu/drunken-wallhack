@@ -3,8 +3,6 @@ import javax.swing.JSplitPane;
 import javax.sound.sampled.*;
 import javax.swing.*;
 
-import org.math.plot.Plot2DPanel;
-
 import java.awt.Container;
 import java.io.IOException;
 import java.net.URL;
@@ -25,13 +23,10 @@ public class PhysicsLab {
 		MyWorldView  worldView = new MyWorldView(world);
 		world.setView(worldView);
 		worldView.setTitle("Physics Lab 3");
-		Plot2DPanel plot = new Plot2DPanel();
+		GraphView plot = new GraphView(); 
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, worldView, plot);
-		int pEHandle = plot.addLinePlot("Potential Energy", world.getTimeArray(), world.getPotentialEnergy());
-		int kEHandle = plot.addLinePlot("Kinetic Energy", world.getTimeArray(), world.getKineticEnergy());
-		int mEHandle = plot.addLinePlot("Mechanical Energy", world.getTimeArray(), world.getMechanicalEnergy());
-		world.setCurrentPlot(plot, pEHandle, kEHandle, mEHandle);
-		//Cargar sonido
+		plot.setVisible(true);
+			//Cargar sonido
 		URL url = this.getClass().getClassLoader().getResource("collision.wav");
 		try {
 			AudioInputStream audio = AudioSystem.getAudioInputStream(url);
