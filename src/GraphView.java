@@ -17,13 +17,15 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 //Code adapted from http://jopenchart.sourceforge.net/tutorial.html#eighth
 
-public class GraphView extends JPanel {
+public class GraphView extends JInternalFrame {
 
 	private XYSeries kinEnergy;
 	private XYSeries potEnergy;
 	private XYSeries mecEnergy;
 	
 	private JFreeChart sysChart;
+	
+	private double plotRange;
 	
 	private XYSeriesCollection series;
 	
@@ -46,6 +48,8 @@ public class GraphView extends JPanel {
         xAxis.setAutoRange(true);
         xAxis.setAutoRangeMinimumSize(0.1);
         
+        plotRange = 30.0;
+        
         add(chart);
     }
 
@@ -57,7 +61,7 @@ public class GraphView extends JPanel {
     
     public void addDataPoint(int id, double Y, double X) { 
     	ValueAxis xAxis = sysChart.getXYPlot().getDomainAxis();
-    	xAxis.setFixedAutoRange(10.0);
+    	xAxis.setFixedAutoRange(plotRange);
     	switch (id) {
 		case 0:
 			//Kinetic
@@ -75,6 +79,14 @@ public class GraphView extends JPanel {
 			break;
 		}
     }
+
+	public double getPlotRange() {
+		return plotRange;
+	}
+
+	public void setPlotRange(double plotRange) {
+		this.plotRange = plotRange;
+	}
     
 }
 

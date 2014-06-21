@@ -223,14 +223,28 @@ public class MyWorld implements ActionListener {
 	public void setCollisionClip(Clip clipCollision) {
 		view.setCollisionClip(clipCollision);
 	}
-
+	/**
+	 * Coloca el titulo de la ventana de dibujo
+	 * @param title String con el titulo a escribir 
+	 **/ 
 	public void setTitle(String title) {
 		view.setTitle(title);	
 	}
 
+	/**
+	 * Inscribe la referencia del area de grafico
+	 * @param plot GraphView ya inicializado 
+	 **/ 
 	public void setPlot(GraphView plot) {
 		mPlotHandle = plot;
 
+	}
+	/**
+	 * Ajusta el tiempo de dibujo en el grafico
+	 * @param range Rango en doble 
+	 **/ 
+	public void setPlottingRange(double range) {
+		mPlotHandle.setPlotRange(range);
 	}
 
 

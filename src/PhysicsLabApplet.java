@@ -25,7 +25,7 @@ public class PhysicsLabApplet extends JApplet {
 		world.setDelta_t(Double.parseDouble(getParameter("deltaTime")));
 		world.setRefreshPeriod(Double.parseDouble(getParameter("refreshTime")));
 		//TODO: Set max plotting time
-		//something something (Double.parseDouble(getParameter("maxPlotTime")))
+		world.setPlottingRange(Double.parseDouble(getParameter("maxPlotTime")));
 
 		//Ver cuantos objetos hay descritos y agregarlos a MyWorld
 		//Bolas
