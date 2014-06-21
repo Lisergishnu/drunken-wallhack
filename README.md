@@ -37,7 +37,7 @@ Archivos y breves descripciones
 ------------
 - **PhysicsLab.html**: Archivo html necesario para ejecutar el applet.
 - **PhysicsLab**: Acá se ejecuta el main y se crea la instancia de mundo, como tambien los listeners y la interfaz gráfica del "laboratorio".
-- **abMenuListener**: Implementación de los menus.
+- **LabMenuListener**: Implementación de los menus.
 - **MouseListener**: Implementación del mouse.
 - **MyWorld**: Contiene los elementos a simular y emula el "mundo".
 - **MyWorldView**: Dibuja el "mundo".
@@ -54,5 +54,5 @@ Archivos y breves descripciones
 - **SpringView**: Define el aspecto de un resorte para la interfáz gráfica.
 - **Oscilador**: Define el objeto oscilador.
 - **OsciladorView**: Define el aspecto de un Oscilador para la interfáz gráfica.
-- ** GraphView**: Crea gráficos a partir de los datos simulados.
+- **GraphView**: Crea gráficos a partir de los datos simulados.
 - **collision.wav**: Sonido de choques entre elementos.
