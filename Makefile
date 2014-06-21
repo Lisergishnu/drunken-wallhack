@@ -1,20 +1,21 @@
 SRC=src/*.java
 JC=javac
+JAR= lib/charting-0.94.jar
+
 NAME=PhysicsLab
 all: jar
 jar: 
-	$(JC) $(SRC)
 	mkdir -p bin/
-	mv src/*.class bin/
-	jar cfe $(NAME).jar $(NAME) -C bin/ . -C assets/ .
+	$(JC) -d bin -cp $(JAR) $(SRC)
+	jar cfm $(NAME).jar src/Manifiest.txt -C bin/ . -C assets/ .
 clean:
 	rm -rf bin/
-	rm $(NAME).jar
+	rm -rf $(NAME).jar
 
 runApplet:
 	appletviewer src/PhysicsLab.html
 
 run:
-	java -jar $(NAME).jar
+	java -cp $(JAR) -jar $(NAME).jar
 doc:
 	javadoc -d docs/ src/*.java

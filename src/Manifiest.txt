@@ -1,0 +1,2 @@
+Class-Path: lib/charting-0.94.jar
+Main-Class: PhysicsLab
