@@ -1,66 +1,80 @@
-import java.awt.*;
-import java.awt.event.*;
 
-import javax.swing.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
-import de.progra.charting.swing.*;
-import de.progra.charting.event.*;
-import de.progra.charting.model.*;
-import de.progra.charting.render.*;
-import de.progra.charting.*;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 
 //Code adapted from http://jopenchart.sourceforge.net/tutorial.html#eighth
 
-public class GraphView extends JInternalFrame implements ActionListener, ChartDataModelListener {
+public class GraphView extends JPanel {
 
-    ChartPanel panel;
-    EditableChartDataModel data;
-    
-    // Initialize the Timer:
-    private Timer t = new Timer(1000, this);
-    private double time = 3.0;
-    
-    
+	private XYSeries kinEnergy;
+	private XYSeries potEnergy;
+	private XYSeries mecEnergy;
+	
+	private JFreeChart sysChart;
+	
+	private XYSeriesCollection series;
+	
     public GraphView() {
-        // Init some starting data
-        double[][] model = {{0.0},
-                            {0.25},
-                            {0.0}};
+        kinEnergy = new XYSeries("Kinetic Energy");
+        potEnergy = new XYSeries("Potential Energy");
+        mecEnergy = new XYSeries("Mechanical Energy");
         
-        double[] columns = {0.0, 30.0};
-        String[] rows = {"Kinetic", "Potential", "Mechanical"};
-
-        String title = "System Energy";
-
-        // Create an editable chart data model
-        data = new EditableChartDataModel(model, columns, rows);
+        series = new XYSeriesCollection(kinEnergy);
+        series.addSeries(potEnergy);
+        series.addSeries(mecEnergy);
         
-        // Creating the Swing ChartPanel instead of DefaultChart
-        panel = new ChartPanel(data, title, DefaultChart.LINEAR_X_LINEAR_Y);
-        // Adding ChartRenderer as usual
-        panel.addChartRenderer(new LineChartRenderer(panel.getCoordSystem(), data), 1);
-        // Register EventListener
-        data.addChartDataModelListener(this);
+        sysChart = ChartFactory.createXYLineChart("System Energy", "Time", "[J]",
+        		series,PlotOrientation.VERTICAL,false,true,false);
         
-        // Start the Timer
-        t.start();
-        setSize(640, 480);
-        this.getContentPane().add(panel, BorderLayout.CENTER);
+        ChartPanel chart = new ChartPanel(sysChart);
+        
+        ValueAxis xAxis = sysChart.getXYPlot().getDomainAxis();
+        xAxis.setRange(0.0, 10.0);
+        xAxis.setAutoRange(true);
+        xAxis.setAutoRangeMinimumSize(0.1);
+        
+        add(chart);
     }
 
-    public void actionPerformed(ActionEvent evt) {
-        // The Timer generated an event -> update DataModel with random data
-        time++;
+    public void ClearData() {
+    	kinEnergy.clear();
+    	potEnergy.clear();
+    	mecEnergy.clear();
     }
     
-    public void addDataPoint(int id, double Y, double X) {
-    	data.insertValue(id, Y, X);
+    public void addDataPoint(int id, double Y, double X) { 
+    	ValueAxis xAxis = sysChart.getXYPlot().getDomainAxis();
+    	xAxis.setFixedAutoRange(10.0);
+    	switch (id) {
+		case 0:
+			//Kinetic
+			kinEnergy.add(X, Y);
+			break;
+		case 1:
+			//Potential
+			potEnergy.add(X, Y);
+			break;
+		case 2:
+			//Mechanical
+			mecEnergy.add(X,Y);
+			break;
+		default:
+			break;
+		}
     }
     
-    public void chartDataChanged(ChartDataModelEvent evt) {
-        // The DataModel changed -> update display
-        panel.revalidate();
-        repaint();
-    }
 }
 

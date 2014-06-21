@@ -4,8 +4,6 @@ import java.io.*;
 import javax.sound.sampled.Clip;
 import javax.swing.Timer;
 
-import de.progra.charting.render.PlotChartRenderer;
-
 import java.awt.Color;
 import java.awt.event.*;
 
@@ -24,7 +22,6 @@ public class MyWorld implements ActionListener {
 	private double t;        // simulation time
 	private double delta_t;        // in seconds
 	private double refreshPeriod;  // in seconds
-	final private double refreshPlotPeriod = .01; //tambien in seconds
 	private double gravity=10; // in m/s^2
 
 	//Arrays for graphics
@@ -143,17 +140,16 @@ public class MyWorld implements ActionListener {
 				}
 			}
 		}
-		//Guardamos los valores
-		arrayStep = (int) ((int) t / refreshPlotPeriod);
+
 
 		//Si se actualizaron los datos (cada refreshPlotTime segundos)
 		//debemos refrescar el grafico
-		if(arrayStep != arrayStepAnterior) {
+		if(arrayStep%5 == 0) {
 			mPlotHandle.addDataPoint(0, kE, t);
 			mPlotHandle.addDataPoint(1, pE, t);
 			mPlotHandle.addDataPoint(2, pE + kE, t);
-			arrayStepAnterior = arrayStep;
 		}
+		arrayStep++;
 		//Despues de haber simulado todo es necesario redibujar la vista
 		repaintView();
 	}
