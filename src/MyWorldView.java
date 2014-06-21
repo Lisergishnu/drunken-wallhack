@@ -43,7 +43,7 @@ public class MyWorldView extends JPanel {
    public MyWorldView(MyWorld w){
       world = w;
       mListener = new MouseListener(w);
-      mTitle = new String("Not initialized");
+      mTitle = new String("My World");
       addMouseMotionListener(mListener);
       addMouseListener(mListener);
       //Vemos si se gatilla un switching de elementos bajo el mouse

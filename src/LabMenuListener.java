@@ -18,30 +18,34 @@ public class LabMenuListener implements ActionListener {
     	  double mass = 1.0;
           double radius = 0.1;
     	 Ball b1 = new Ball(mass,radius,1,0);
-         Ball b2 = new Ball(mass,radius,2,1);
+         Ball b2 = new Ball(mass,radius,2.1,1);
          FixedHook h1  = new FixedHook(0,.2);
          Spring s1 = new Spring(.5,1);
-         //Spring s2 = new Spring(.5,1);
-         Block bloque1 = new Block(2,.2,3,0,world);
+         Spring s2 = new Spring(.5,1);
+         Oscilador o1 = new Oscilador(1.6,.2,1,.6);
+         Block bloque1 = new Block(2,.2,2.8,0,world);
          world.addElement(b1);
          world.addElement(b2);
          world.addElement(h1);
          world.addElement(s1);
-         //world.addElement(s2);
+         world.addElement(s2);
+         world.addElement(o1);
          world.addElement(bloque1);
          s1.attachAend(h1);
          s1.attachBend(b1);
-         //s2.attachAend(b2);
-         //s2.attachBend(bloque1);
+         s2.attachAend(o1);
+         s2.attachBend(b2);
       }
       if (text.equals("Ball")) 
     	  world.addElement(new Ball(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0));     
-      if (text.equals("Fixed Hook"))  // ; same as nothing
+      if (text.equals("Fixed Hook"))
     	  world.addElement(new FixedHook(0.1 + r.nextDouble() *3,0.1 + r.nextDouble() *0.3));  
       if (text.equals("Spring")) 
     	  world.addElement(new Spring(0.1 + r.nextDouble() *3,0.1 + r.nextDouble() *0.5));  
       if (text.equals("Block")) 
-    	  world.addElement(new Block(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0,world));  
+    	  world.addElement(new Block(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0,world));
+      if (text.equals("Oscilador")) 
+    	  world.addElement(new Oscilador(0.1 + r.nextDouble() *3,0.075 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0.1 + r.nextDouble()));
       
       // Actions associated to MyWorld submenu
       if (text.equals("Start"))

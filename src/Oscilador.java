@@ -52,9 +52,7 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 		pos = nextPos;
 	}
 
-	@Override
 	public boolean collide(Simulateable me) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -90,6 +88,7 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 	
 	public void setPosition(double x) {
 		this.pos = x;
+		posInicial = x;
 	}
 
 	public String getDescription(){
@@ -113,8 +112,6 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
     public void dragTo(double x){
 
     }
-
-
 	public double getWidth() {
 		return width;
 	}

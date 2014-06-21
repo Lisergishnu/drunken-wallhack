@@ -30,6 +30,9 @@ public class MouseListener extends MouseAdapter {
          else if (currentElement instanceof Spring){     
             System.out.println("Spring Selected");
          }
+         else if (currentElement instanceof Oscilador){     
+             System.out.println("Oscilador Selected");
+          }
       }
    }
 
@@ -64,6 +67,10 @@ public class MouseListener extends MouseAdapter {
 			  System.out.println("Dragging Block");
 		      ((Block)currentElement).setPosition(p.getX());
 		   }
+		   else if (currentElement instanceof Oscilador){
+				  System.out.println("Dragging Oscilador");
+			      ((Oscilador)currentElement).setPosition(p.getX());
+			   }
 		   else if (currentElement instanceof Spring){	   
 			  ((Spring)currentElement).detachAend();  
 			  ((Spring)currentElement).detachBend();
