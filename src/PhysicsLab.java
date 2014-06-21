@@ -103,6 +103,9 @@ public class PhysicsLab extends JApplet {
 	      menuItem = new JMenuItem("Block");
 	      menuItem.addActionListener(menu_l);
 	      subMenu.add(menuItem);
+	      menuItem = new JMenuItem("Oscilador");
+	      menuItem.addActionListener(menu_l);
+	      subMenu.add(menuItem);
 	      menuItem = new JMenuItem("My scenario");
 	      menuItem.addActionListener(menu_l);
 	      subMenu.add(menuItem);
