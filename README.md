@@ -23,15 +23,15 @@ o bien este otro comando:
 
 Comentarios
 ------------
--agregar aca las opciones de html
--Una vez ejecutado el programa se puede apreciar un eje en donde interactúan los distintos elementos y una serie opciones en la barra superior de la ventana.
--Desde el menú "Configuration>insert" se pueden añadir los distintos elementos (bolas, puntos fijos, resortes, bloques y osciladores) con sus propiedades asignadas de manera aleatoria (masa, tamaño, etc).
--También se encuentra acá la opción "My Scenario" que inserta un escenario prestablecido.
--Una vez agregados los elementos estos se pueden reposicionar seleccionandolos con un click y arrastrándolos a la posición deseada.
--En el caso que más de un elemento se encuentre en la misma posición se puede cambiar el elemento seleccionado con la tecla 'n' o 'space'.
--Desde el menú "My World" se pueden iniciar y detener las simulaciones como también modificar los parámetros del simulador.
--Es importante mencionar que durante una simulación no se puede modificar los elementos añadidos.
--Entre los parámetros que se pueden modificar del simulador esta la tasa de refresco de la pantalla como también el delta de tiempo entre cada cálculo de la simulación.
+- Desde el archivo html es posible modificar cuantos segundos hacia atras se quieren graficas las distintintas energias mediante el parámetro "maxPlotTime".
+- Una vez ejecutado el programa se puede apreciar un eje en donde interactúan los distintos elementos y una serie opciones en la barra superior de la ventana.
+- Desde el menú "Configuration>insert" se pueden añadir los distintos elementos (bolas, puntos fijos, resortes, bloques y osciladores) con sus propiedades asignadas de manera aleatoria (masa, tamaño, etc).
+- También se encuentra acá la opción "My Scenario" que inserta un escenario prestablecido.
+- Una vez agregados los elementos estos se pueden reposicionar seleccionandolos con un click y arrastrándolos a la posición deseada.
+- En el caso que más de un elemento se encuentre en la misma posición se puede cambiar el elemento seleccionado con la tecla 'n' o 'space'.
+- Desde el menú "My World" se pueden iniciar y detener las simulaciones como también modificar los parámetros del simulador.
+- Es importante mencionar que durante una simulación no se puede modificar los elementos añadidos.
+- Entre los parámetros que se pueden modificar del simulador esta la tasa de refresco de la pantalla como también el delta de tiempo entre cada cálculo de la simulación.
 
 Archivos y breves descripciones
 ------------
