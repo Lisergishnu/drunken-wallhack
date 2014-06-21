@@ -1,13 +1,13 @@
 drunken-wallhack
 ================
 
-Introducci�n
+Introducción
 ------------
-Tercera tarea correspondiente al ramo "Programaci�n Orientada a Objetos" ELO329.
-Esta applet realizada en Java simula un laboratorio de f�sica que comprende cinco objetos: puntos fijos (FixedHook), bolas (Ball), bloques con roce cin�tico (Block), resortes (Spring) y Osciladores, simulando la interacci�n entre ellos mientras que a su vez muestra en un gr�fico la energ�a cinetica, potencial y total del sistema.
-En el archivo documentacion.pdf se puede encontrar una descripcion m�s detallada del trabajo realizado.
+Tercera tarea correspondiente al ramo "Programación Orientada a Objetos" ELO329.
+Esta applet realizada en Java simula un laboratorio de física que comprende cinco objetos: puntos fijos (FixedHook), bolas (Ball), bloques con roce cinético (Block), resortes (Spring) y Osciladores, simulando la interacción entre ellos mientras que a su vez muestra en un gráfico la energía cinetica, potencial y total del sistema.
+En el archivo documentacion.pdf se puede encontrar una descripcion más detallada del trabajo realizado.
 
-Compilaci�n y Ejecuci�n
+Compilación y Ejecución
 ------------
 El programa se puede correr tanto como applet como aplicacion.
 Para preparar la ejecucion como applet hay que ejecutar el siguiente comando:
@@ -30,14 +30,14 @@ o bien este otro comando:
 Comentarios
 ------------
 - **agregar aca las opciones de html**
-- Una vez ejecutado el programa se puede apreciar un eje en donde interact�an los distintos elementos y una serie opciones en la barra superior de la ventana.
-- Desde el men� "Configuration>insert" se pueden a�adir los distintos elementos (bolas, puntos fijos, resortes, bloques y osciladores) con sus propiedades asignadas de manera aleatoria (masa, tama�o, etc).
-- Tambi�n se encuentra ac� la opci�n "My Scenario" que inserta un escenario prestablecido.
-- Una vez agregados los elementos estos se pueden reposicionar seleccionandolos con un click y arrastr�ndolos a la posici�n deseada.
-- En el caso que m�s de un elemento se encuentre en la misma posici�n se puede cambiar el elemento seleccionado con la tecla 'n' o 'space'.
-- Desde el men� "My World" se pueden iniciar y detener las simulaciones como tambi�n modificar los par�metros del simulador.
-- Es importante mencionar que durante una simulaci�n no se puede modificar los elementos a�adidos.
-- Entre los par�metros que se pueden modificar del simulador esta la tasa de refresco de la pantalla como tambi�n el delta de tiempo entre cada c�lculo de la simulaci�n.
+- Una vez ejecutado el programa se puede apreciar un eje en donde interactúan los distintos elementos y una serie opciones en la barra superior de la ventana.
+- Desde el menú "Configuration>insert" se pueden añadir los distintos elementos (bolas, puntos fijos, resortes, bloques y osciladores) con sus propiedades asignadas de manera aleatoria (masa, tamaño, etc).
+- También se encuentra acá la opción "My Scenario" que inserta un escenario prestablecido.
+- Una vez agregados los elementos estos se pueden reposicionar seleccionandolos con un click y arrastrándolos a la posición deseada.
+- En el caso que más de un elemento se encuentre en la misma posición se puede cambiar el elemento seleccionado con la tecla 'n' o 'space'.
+- Desde el menú "My World" se pueden iniciar y detener las simulaciones como también modificar los parámetros del simulador.
+- Es importante mencionar que durante una simulaci�n no se puede modificar los elementos añadidos.
+- Entre los parámetros que se pueden modificar del simulador esta la tasa de refresco de la pantalla como tambi�n el delta de tiempo entre cada cálculo de la simulaci�n.
 
 Archivos y breves descripciones
 ------------
