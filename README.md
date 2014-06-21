@@ -5,21 +5,28 @@ Introducción
 ------------
 Tercera tarea correspondiente al ramo "Programación Orientada a Objetos" ELO329. Esta applet realizada en Java simula un laboratorio de física que comprende cinco objetos: puntos fijos (FixedHook), bolas (Ball), bloques con roce cinético (Block), resortes (Spring) y Osciladores, simulando la interacción entre ellos mientras que a su vez muestra en un gráfico la energía cinetica, potencial y total del sistema. En el archivo documentacion.pdf se puede encontrar una descripcion más detallada del trabajo realizado.
 
+IMPORTANTE
+----------
+
+Por temas de seguridad el Applet **NO** puede cargar librerias externas, por lo que puede fallar en algunos sistemas. Se recomienda **encarecidamente** usar la version *standalone*.
+
 Compilación y Ejecución
 ------------
 El programa se puede correr tanto como applet como aplicacion. Para preparar la ejecucion como applet hay que ejecutar el siguiente comando:
 
-	$ make jar
-Para correr el applet basta ejecutar el siguiente comando, que ejecutara el arhicvo PhysicsLab.html
-
-	$ make runApplet
+	$ make
 
 Para ejecutar el programa aplicacion basta usar:
 
 	$ make run
+
 o bien este otro comando:
 
 	$ java -jar PhysicsLab.jar
+
+Para correr el applet (*no recomendado*) basta ejecutar el siguiente comando, que ejecutara el archivo PhysicsLab.html
+
+	$ make runApplet
 
 Comentarios
 ------------
