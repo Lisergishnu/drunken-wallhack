@@ -1,6 +1,6 @@
 SRC=src/*.java
 JC=javac
-JAR= lib/charting-0.94.jar
+JAR= lib/jcommon-1.0.21.jar:lib/jfreechart-1.0.17.jar
 
 NAME=PhysicsLab
 all: jar
