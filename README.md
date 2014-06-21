@@ -8,7 +8,7 @@ Tercera tarea correspondiente al ramo "Programación Orientada a Objetos" ELO329.
 IMPORTANTE
 ----------
 
-Por temas de seguridad el Applet **NO** puede cargar librerias externas, por lo que puede fallar en algunos sistemas. Se recomienda **encarecidamente** usar la version *standalone*.
+Por temas de seguridad el Applet **NO** puede cargar librerias externas, por lo que puede fallar en algunos sistemas. Se recomienda **encarecidamente** usar la version *standalone*. Aún así, ejecutar la applet desde Eclipse no da ningun problema.
 
 Compilación y Ejecución
 ------------
