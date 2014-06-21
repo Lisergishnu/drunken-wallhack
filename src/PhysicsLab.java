@@ -27,23 +27,7 @@ public class PhysicsLab {
 		world.setPlot(plot);
 		JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, worldView, plot);
 		plot.setVisible(true);
-			//Cargar sonido
-		URL url = this.getClass().getClassLoader().getResource("collision.wav");
-		try {
-			AudioInputStream audio = AudioSystem.getAudioInputStream(url);
-			Clip clipCollision = AudioSystem.getClip();
-			clipCollision.open(audio);
-			world.setCollisionClip(clipCollision);
-		} catch (UnsupportedAudioFileException e) {
-			System.out.println("Audio file Unsupported.");
-			e.printStackTrace();
-		} catch (IOException e) {
-			System.out.println("Can't open file.");
-			e.printStackTrace();
-		} catch (LineUnavailableException e) {
-			System.out.println("Cannot open audio clip line.");
-			e.printStackTrace();
-		}
+		
 		return splitPane;
 	}
 
@@ -57,6 +41,24 @@ public class PhysicsLab {
 		lab_gui.add(splitPane);
 		lab_gui.setVisible(true);
 		splitPane.setDividerLocation(0.65);
+		
+		//Cargar sonido
+		URL url = yo.getClass().getClassLoader().getResource("collision.wav");
+		try {
+			AudioInputStream audio = AudioSystem.getAudioInputStream(url);
+			Clip clipCollision = AudioSystem.getClip();
+			clipCollision.open(audio);
+			yo.getWorld().setCollisionClip(clipCollision);
+		} catch (UnsupportedAudioFileException e) {
+			System.out.println("Audio file Unsupported.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Can't open file.");
+			e.printStackTrace();
+		} catch (LineUnavailableException e) {
+			System.out.println("Cannot open audio clip line.");
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -116,5 +118,6 @@ class PhysicsLab_GUI extends JFrame {
 	public PhysicsLab_GUI() {
 		setTitle("My Small and Nice Physics Laboratory");
 		setSize(MyWorldView.WIDTH+200, MyWorldView.HEIGHT+150);  // height+50 to account for menu height
+		
 	}   
 }
