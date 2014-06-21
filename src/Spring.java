@@ -115,5 +115,8 @@ public class Spring extends PhysicsElement {
         	((Simulateable)b_end).setForce(getForce(b_end));
         }
     }
+public double getPotentialEnergy() {
+	return 0.5 * stiffness * (Math.abs(getAendPosition() - getBendPosition()) - restLength) * (Math.abs(getAendPosition() - getBendPosition()) - restLength);
+}
 
 }
