@@ -48,9 +48,7 @@ public class Oscilador extends PhysicsElement implements Simulateable, SpringAtt
 		pos = nextPos;
 	}
 
-	@Override
 	public boolean collide(Simulateable me) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
