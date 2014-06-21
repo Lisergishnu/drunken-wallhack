@@ -44,7 +44,7 @@ public class LabMenuListener implements ActionListener {
     	  world.addElement(new Spring(0.1 + r.nextDouble() *3,0.1 + r.nextDouble() *0.5));  
       if (text.equals("Block")) 
     	  world.addElement(new Block(0.1 + r.nextDouble() *3,0.05 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0,world));
-      if (text.equals("Oscilador")) 
+      if (text.equals("Oscillator")) 
     	  world.addElement(new Oscilador(0.1 + r.nextDouble() *3,1.0,0.075 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0.1 + r.nextDouble()));
       
       // Actions associated to MyWorld submenu

@@ -80,6 +80,9 @@ public class PhysicsLab {
 		menuItem = new JMenuItem("Block");
 		menuItem.addActionListener(menu_l);
 		subMenu.add(menuItem);
+		menuItem = new JMenuItem("Oscillator");
+		menuItem.addActionListener(menu_l);
+		subMenu.add(menuItem);
 		menuItem = new JMenuItem("My scenario");
 		menuItem.addActionListener(menu_l);
 		subMenu.add(menuItem);
