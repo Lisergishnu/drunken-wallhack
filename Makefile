@@ -13,7 +13,7 @@ clean:
 	rm -rf $(NAME).jar
 
 runApplet:
-	appletviewer src/PhysicsLab.html
+	appletviewer -J-classpath -J$(JAR) src/PhysicsLab.html
 
 run:
 	java -cp $(JAR) -jar $(NAME).jar

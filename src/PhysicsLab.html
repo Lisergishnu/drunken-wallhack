@@ -3,8 +3,18 @@
 <title>PhysicsLab</title>
 </head>
 <body>
-<applet code="PhysicsLab.class" codebase="../bin/." width="800" height="200">
+<applet code="PhysicsLabApplet.class" codebase="../bin/" archive="../lib/jfreechart-1.0.17.jar"  width="1000" height="250">
 	<param name="title" value="Physics Lab: 3 Experiencing with oscillations"> 
+	<param name="ballNum" value="2">
+	<param name="ball.1" value="1.0;0.1;1;0">
+	<param name="ball.1" value="1.0;0,1;2;1"> 
+	<param name="fixedHookNum" value="1">
+	<param name="fixedHook.1" value="0.2;0.2">
+	<param name="oscillatorNum" value="1">
+	<param name="oscillator.1" value="2;1;0.1;1;0.5">
+	<param name="deltaTime" value="0.001">
+	<param name="refreshTime" value="0.03">
+	<param name="maxPlotTime" value="30">
 </applet>
 </body>
 </html>

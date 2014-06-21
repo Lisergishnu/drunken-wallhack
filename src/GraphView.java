@@ -48,7 +48,7 @@ public class GraphView extends JInternalFrame {
         xAxis.setAutoRange(true);
         xAxis.setAutoRangeMinimumSize(0.1);
         
-        plotRange = 30.0;
+        plotRange = 30.0; //default
         
         add(chart);
     }
