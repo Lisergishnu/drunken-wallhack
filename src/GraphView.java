@@ -39,7 +39,7 @@ public class GraphView extends JInternalFrame {
         series.addSeries(mecEnergy);
         
         sysChart = ChartFactory.createXYLineChart("System Energy", "Time", "[J]",
-        		series,PlotOrientation.VERTICAL,false,true,false);
+        		series,PlotOrientation.VERTICAL,true,true,false);
         
         ChartPanel chart = new ChartPanel(sysChart);
         
