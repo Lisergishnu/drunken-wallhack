@@ -246,6 +246,10 @@ public class MyWorld implements ActionListener {
 	public void setPlottingRange(double range) {
 		mPlotHandle.setPlotRange(range);
 	}
+	public void resetPlot() {
+		mPlotHandle.ClearData();
+		t = 0;
+	}
 
 
 } 

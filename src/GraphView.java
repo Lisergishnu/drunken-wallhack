@@ -44,12 +44,10 @@ public class GraphView extends JInternalFrame {
         ChartPanel chart = new ChartPanel(sysChart);
         
         ValueAxis xAxis = sysChart.getXYPlot().getDomainAxis();
-        xAxis.setRange(0.0, 10.0);
         xAxis.setAutoRange(true);
         xAxis.setAutoRangeMinimumSize(0.1);
-        
         plotRange = 30.0; //default
-        
+        xAxis.setRange(0.0, plotRange);
         add(chart);
     }
 
@@ -57,6 +55,8 @@ public class GraphView extends JInternalFrame {
     	kinEnergy.clear();
     	potEnergy.clear();
     	mecEnergy.clear();
+    	ValueAxis xAxis = sysChart.getXYPlot().getDomainAxis();
+    	xAxis.setRange(0.0, plotRange);
     }
     
     public void addDataPoint(int id, double Y, double X) { 

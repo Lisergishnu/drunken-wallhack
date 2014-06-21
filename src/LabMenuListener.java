@@ -48,6 +48,8 @@ public class LabMenuListener implements ActionListener {
     	  world.addElement(new Oscilador(0.1 + r.nextDouble() *3,1.0,0.075 + r.nextDouble() *0.2,0.1 + r.nextDouble()*3 , 0.1 + r.nextDouble()));
       
       // Actions associated to MyWorld submenu
+      if (text.equals("Reset Plot"))
+    	  world.resetPlot();
       if (text.equals("Start"))
     	  world.start();
       if (text.equals("Stop"))

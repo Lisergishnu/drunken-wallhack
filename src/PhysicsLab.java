@@ -95,6 +95,9 @@ public class PhysicsLab {
 		menuItem = new JMenuItem("Stop");
 		menuItem.addActionListener(menu_l);
 		menu.add(menuItem);
+		menuItem = new JMenuItem("Reset Plot");
+		menuItem.addActionListener(menu_l);
+		menu.add(menuItem);
 		//Submenu Simulator
 		subMenu = new JMenu("Simulator");
 		menu.add(subMenu);
