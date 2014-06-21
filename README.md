@@ -36,27 +36,27 @@ Comentarios
 - Una vez agregados los elementos estos se pueden reposicionar seleccionandolos con un click y arrastrándolos a la posición deseada.
 - En el caso que más de un elemento se encuentre en la misma posición se puede cambiar el elemento seleccionado con la tecla 'n' o 'space'.
 - Desde el menú "My World" se pueden iniciar y detener las simulaciones como también modificar los parámetros del simulador.
-- Es importante mencionar que durante una simulaci�n no se puede modificar los elementos añadidos.
-- Entre los parámetros que se pueden modificar del simulador esta la tasa de refresco de la pantalla como tambi�n el delta de tiempo entre cada cálculo de la simulaci�n.
+- Es importante mencionar que durante una simulación no se puede modificar los elementos añadidos.
+- Entre los parámetros que se pueden modificar del simulador esta la tasa de refresco de la pantalla como también el delta de tiempo entre cada cálculo de la simulación.
 
 Archivos y breves descripciones
 ------------
-- **PhysicsLab**: Ac� se ejecuta el main y se crea la instancia de mundo, como tambien los listeners y la interfaz gr�fica del "laboratorio".
-- **LabMenuListener**: Implementaci�n de los menus.
-- **MouseListener**: Implementaci�n del mouse.
+- **PhysicsLab**: Acá se ejecuta el main y se crea la instancia de mundo, como tambien los listeners y la interfaz gráfica del "laboratorio".
+- **LabMenuListener**: Implementación de los menus.
+- **MouseListener**: Implementación del mouse.
 - **MyWorld**: Contiene los elementos a simular y emula el "mundo".
 - **MyWorldView**: Dibuja el "mundo".
-- **PhysicsElement**: Define las clases de elementos f�sicos. Ball y FixedHook heredan de este.
+- **PhysicsElement**: Define las clases de elementos físicos. Ball y FixedHook heredan de este.
 - **Simulateable**: Interfaz para clasificar clases simulables.
 - **SpringAttachable**: Interfaz para clasificar clases que se pueden conctar a un resorte.
 - **Ball**: Define el objeto bola.
-- **BallView**: Define el aspecto de una bola para la interf�z gr�fica.
+- **BallView**: Define el aspecto de una bola para la interfaz gráfica.
 - **FixedHook**: Define el objeto punto fijo.
-- **FixedHookView**: Define el aspecto de un punto fijo para la interfaz gr�fica.
-- **Block**: Define el objeto de bloque con roce cin�tico.
+- **FixedHookView**: Define el aspecto de un punto fijo para la interfaz gráfica.
+- **Block**: Define el objeto de bloque con roce cinético.
 - **BlockView**: Define el aspecto de los bloques.
 - **Spring**: Define el objeto resorte.
-- **SpringView**: Define el aspecto de un resorte para la interf�z gr�fica.
+- **SpringView**: Define el aspecto de un resorte para la interfaz gráfica.
 - **Oscilador**: Define el objeto oscilador.
-- **OsciladorView**: Define el aspecto de un Oscilador para la interf�z gr�fica.
+- **OsciladorView**: Define el aspecto de un Oscilador para la interfaz gráfica.
 - **GraphView**: Crea y muestra los gráficos.
